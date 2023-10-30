@@ -18,12 +18,10 @@
     <nav class="bg-black " style="z-index: 9;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <div class="flex items-center justify-start">
+          <div class="flex items-center justify-between w-full">
             <a href="#" style="z-index:90;" class="text-white text-xl font-bold">Plan<span class="text-red-900">e</span>tarium</a>
-            <button class="ml-4 inline-flex sm:hidden text-gray-500 hover:text-white focus:outline-none" id="menu-button">
-              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>Menu
+            <button onclick="togglemenu()" style="z-index:90;" class="font-bold px-3 py-1 text-xl text-center ml-4 inline-flex bg-white sm:hidden text-gray-500  " id="menu-button">
+             &#9776;
             </button>
           </div>
           <div  style="z-index:90;" class="hidden sm:flex sm:items-center" id="menu-items">
@@ -35,8 +33,8 @@
         </div>
       </div>
     
-      <div class="absolute z-1000 hidden" id="menu-collapse">
-        <div class="px-2 pt-2 pb-3 space-y-1 ">
+      <div class=" absolute hidden bg-black w-full" style="z-index:90;" id="menu-collapse">
+        <div class="flex flex-col items-center  pt-2 pb-3 space-y-1 ">
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Planets</a>
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
@@ -105,6 +103,15 @@ startDelay: 5000,
 backSpeed: 1,
 loop: false,
       });
+      var menu = document.getElementById('menu-collapse')
+      function togglemenu(){
+        if(menu.style.display=='block'){
+          menu.style.display='none'
+        }
+        else {
+          menu.style.display='block'
+        }
+      }
     </script> 
     <!-- CTA Section -->
     <section class="py-20 px-8 bg-gradient-to-r from-grey to-black text-center">
